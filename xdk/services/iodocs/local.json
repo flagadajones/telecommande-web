@@ -1,0 +1,34 @@
+{
+"endpoints": [
+  {
+    "name": "Resource Group A",
+    "dashboardUrl": "http://developer.example.api/resourceGroupA",
+    "methods": [
+      {
+        "MethodName": "methodA1",
+        "Synopsis": "Grabs information from the A1 data set"
+      },
+      {
+        "MethodName": "methodA1User",
+        "Synopsis": "Grabs information from the A1 data set for a specific user",
+        "parameters": [
+          {
+            "Name": "param_1_name",
+            "Required": "Y",
+            "Default": "",
+            "Type": "string",
+            "Description": "Description of the first parameter."
+          },
+          {
+            "Name": "userId",
+            "Required": "Y",
+            "Default": "",
+            "Type": "string",
+            "Description": "The userId parameter that is in the URI."
+          }
+        ]
+      }
+    ]
+  }
+]
+}

@@ -1,0 +1,29 @@
+<ion-view title="Playlists">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <ion-list>
+        <div class="item item-divider">
+    Servers
+  </div>
+
+     <ion-radio ng-model="server" ng-value="server.id" class="item item-avatar" ng-repeat="server in servers" >
+          <img ng-src="{{server.icon}}">
+      <h2>{{server.name}}</h2>
+      <p>{{server.id}}</p>
+      </ion-radio>
+
+        <div class="item item-divider">
+    Renderers
+  </div>
+     <ion-radio ng-model="renderer" ng-value="renderer.id" class="item item-avatar" ng-repeat="renderer in renderers" >
+       <img ng-src="{{renderer.icon}}">
+      <h2>{{renderer.name}}</h2>
+      <p>{{renderer.id}}</p>
+      </ion-radio>
+
+      
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,49 @@
+
+<ion-view title="Albums">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+     <!--<ion-content class="has-header">
+          <div class="deckgrid clearfix" deckgrid source="albums" cardTemplate="templates/deckgrid-card.html"></div>
+     
+<div class="list">
+
+    <a ng-repeat="album in albums" class="item item-thumbnail-left">
+
+        <img src="{{ album.albumArtURI[0].Text }}">
+        <h2>{{ album.album }}</h2>
+        <h4>{{ album.artist }}</h4>
+    </a>
+
+</div>
+
+
+        <div ng-repeat="row in albums | partition:4" style="display:block;width:800px">
+            <div bindonce style="width:200px;height:200px;float:left" ng-repeat="album in row">
+                <a>
+                    <a bo-href="'#/people/' + person.id">
+                        <img bo-src="person.imageUrl">
+                    </a>
+                    <a bo-href="'#/people/' + person.id" bo-text="person.name"></a>
+                    <img style="width:100px;height:100px" bo-src="album.albumArtURI[0].Text">
+                    <h2 bo-html="album.album" />
+                    <h4 bo-html="album.artist" />
+                </a>
+
+            </div>
+        </div>
+    </ion-content>
+-->    <ion-content>
+  <div class="item item-avatar my-image-item"
+    collection-repeat="album in albums"
+    collection-item-width="'33%'"
+    collection-item-height="'33%'">
+         <a href="#" >
+                    <img style="height: 33%; width: 33%;" ng-src="{{album.albumArtURI[0].Text}}">
+                    <h2  >{{album.album}}</h2>
+                    <h4  >{{album.artist}}</h4>
+                </a>
+  </div>
+</ion-content>
+</ion-view>
