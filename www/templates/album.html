@@ -1,0 +1,23 @@
+<ion-view title="Album">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        {{album.title}}
+        <img style="height: 100px;width:100px" ng-src="{{album.albumArtURI[0].Text}}">
+        <ion-list style="width:100%">
+            <div class="item item-divider">
+                Pistes
+            </div>
+
+            <ion-item ng-model="piste" ng-value="piste.id" class="item item-avatar" collection-repeat="piste in pistes" collection-item-width="'100%'" collection-item-height="100">
+                <img ng-src="{{piste.albumArtURI[0].Text}}">
+                <h2>{{piste.title}}</h2>
+                <p>{{piste.res[0].duration}}</p>
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+    </ion-content>
+</ion-view>
