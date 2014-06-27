@@ -1,0 +1,2255 @@
+<!doctype html>
+<html>
+<head>
+  <title>core-animated-pages</title>
+
+ <script src="./polymer/angular/angular.js"></script>
+  <script src="./polymer/platform/platform.js"></script>
+  <link href="./polymer/core-animated-pages/core-animated-pages.html" rel="import">
+  <link href="./polymer/paper-ripple/paper-ripple.html" rel="import">
+
+  <style>
+    body {
+      font-family: 'Roboto 2', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      background: #f1f1f1;
+    }
+
+    .green {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 350px;
+      background: #70c26f;
+    }
+  </style>
+</head>
+<script>
+var extranetApp = angular.module('extranetApp', []);
+
+	extranetApp.run(function($rootScope) {
+		$rootScope.ariane =[{
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+            {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+      
+      {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+        {
+    
+        "title": "AlbumTitre",
+        "creator": "Artiste",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+      },
+      
+      {
+        "title": "2",
+        "creator": "Florent Pagny",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I633354.jpg?scale=160x160"
+          }
+        ],
+      }
+];
+
+
+		
+	});
+	
+
+</script>
+
+<body  ng-app="extranetApp">
+ 
+ 
+  <polymer-element name="music-demo" attributes="items">
+  <template>
+    <style>
+      .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        margin: 4px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+      }
+
+      .chip-top {
+        width: 200px;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+
+      #details {
+        padding: 200px 10% 0;
+      }
+
+      .card {
+        height: 400px;
+        border-radius: 3px;
+        text-align: start;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .card-left {
+        width: 400px;
+      }
+
+      .card-right {
+        padding: 24px;
+      }
+
+      .card-icon {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 16px;
+      }
+
+      .card-album-title {
+        font-size: 2em;
+      }
+    </style>
+
+    <core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+      <section>
+
+        <div class="chip-container" hero-p on-tap="{{transition}}">
+
+          <template repeat="{{items as item}}">
+
+            <div class="chip" hero-id="{{item.creator}}-{{item.album}}" hero?="{{selectedAlbum === item }}">
+<paper-ripple fit></paper-ripple>
+              <div class="chip-top" style="background:#FF0000;" hero-id="{{item.creator}}-{{item.title}}-art" hero?="{{selectedAlbum === item}}"></div>
+              <div class="chip-bottom">
+                <div class="chip-album-title">{{item.title}}</div>
+                <div class="chip-artist">{{item.creator}}</div>
+              </div>
+            </div>
+
+          </template>
+
+        </div>
+        
+      </section>
+
+      <section id="details">
+
+        <div class="card" layout horizontal hero-id="{{selectedAlbum.creator}}-{{selectedAlbum.title}}" hero on-tap="{{transition}}">
+          <div class="card-left" style="background:#FF0000;" hero-id="{{selectedAlbum.creator}}-{{selectedAlbum.title}}-art" hero></div>
+          <div class="card-right" flex>
+            <div layout horizontal center class="button raised grey narrow label-blue">
+              <div>
+                <div class="card-icon" style="background:#FF0000;"></div>
+              </div>
+              <div flex>
+                <div class="card-album-title">{{selectedAlbum.title}}</div>
+                <div class="card-album-artist">{{selectedAlbum.creator}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </core-animated-pages>
+
+  </template>
+  <script>
+
+    Polymer('music-demo', {
+      created: function() {
+      this.items = [];
+    },
+      page: 0,
+ 
+      selectedAlbum: null,
+	
+      transition: function(e) {
+        if (this.page === 0) {
+          this.selectedAlbum = e.target.templateInstance.model.item;
+          this.page = 1;
+        } else {
+          this.page = 0;
+        }
+      }
+    });
+
+  </script>
+  </polymer-element>
+
+
+  <div class="green"></div>
+
+  <music-demo items="{{ariane}}"></music-demo>
+
+</body>
+</html>

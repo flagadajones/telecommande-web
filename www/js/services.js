@@ -8,7 +8,7 @@ angular.module('starter.services', ['ngResource']) //'ngResource'
 })
 .factory('Albums', ['$resource',
   function ($resource) {
-        return $resource('http://192.168.0.102:4242/servers/:serverId/albums', {}, {
+        return $resource('http://localhost:4242/servers/:serverId/albums', {}, {
             query: {
                 method: 'GET',
                 params: {
