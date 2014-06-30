@@ -1,6 +1,6 @@
 angular.module('starter.services', ['ngResource']) //'ngResource'
 .factory('mySocket', function (socketFactory) {
-    var myIoSocket = io.connect('http://localhost:4242');
+    var myIoSocket = io.connect('http://192.168.0.102:4242');
     var mySocket = socketFactory({
         ioSocket: myIoSocket
     });
@@ -8,7 +8,7 @@ angular.module('starter.services', ['ngResource']) //'ngResource'
 })
     .factory('Albums', ['$resource',
   function ($resource) {
-            return $resource('http://localhost:4242/servers/:serverId/albums', {}, {
+            return $resource('http://192.168.0.102:4242/servers/:serverId/albums', {}, {
                 get: {
                     method: 'GET',
                     params: {},
@@ -19,7 +19,7 @@ angular.module('starter.services', ['ngResource']) //'ngResource'
   }])
     .factory('Album', ['$resource',
   function ($resource) {
-            return $resource('http://localhost:4242/servers/:serverId/album/:albumId', {}, {
+            return $resource('http://192.168.0.102:4242/servers/:serverId/album/:albumId', {}, {
                 get: {
                     method: 'GET',
                     params: {
@@ -33,7 +33,7 @@ angular.module('starter.services', ['ngResource']) //'ngResource'
 
 .factory('Pistes', ['$resource',
   function ($resource) {
-        return $resource('http://localhost:4242/servers/:serverId/album/:albumId/pistes', {}, {
+        return $resource('http://192.168.0.102:4242/servers/:serverId/albums/:albumId/pistes', {}, {
             get: {
                 method: 'GET',
                 params: {},
@@ -45,7 +45,7 @@ angular.module('starter.services', ['ngResource']) //'ngResource'
 
 .factory('Servers', ['$resource',
   function ($resource) {
-        return $resource('http://localhost:4242/servers', {}, {
+        return $resource('http://192.168.0.102:4242/servers', {}, {
             query: {
                 method: 'GET',
 
@@ -56,7 +56,7 @@ angular.module('starter.services', ['ngResource']) //'ngResource'
 
 .factory('Renderers', ['$resource',
   function ($resource) {
-        return $resource('http://localhost:4242/renderers', {}, {
+        return $resource('http://192.168.0.102:4242/renderers', {}, {
             query: {
                 method: 'GET',
                 isArray: true
