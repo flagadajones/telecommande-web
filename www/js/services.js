@@ -1,29 +1,56 @@
+//var server="192.168.0.102:4242";
+var server="localhost:4242";
 angular.module('starter.services', ['ngResource']) //'ngResource'
 .factory('mySocket', function (socketFactory) {
-    var myIoSocket=io.connect('http://localhost:4242');
+    var myIoSocket = io.connect('http://'+server);
     var mySocket = socketFactory({
-    ioSocket: myIoSocket
-  });
-  return mySocket;
+        ioSocket: myIoSocket
+    });
+    return mySocket;
 })
-.factory('Albums', ['$resource',
+    .factory('Albums', ['$resource',
   function ($resource) {
-        return $resource('http://localhost:4242/servers/:serverId/albums', {}, {
-            query: {
+            return $resource('http://'+server+'/servers/:serverId/albums', {}, {
+                get: {
+                    method: 'GET',
+                    params: {},
+                    isArray: false
+                }
+
+            });
+  }])
+    .factory('Album', ['$resource',
+  function ($resource) {
+            return $resource('http://'+server+'/servers/:serverId/album/:albumId', {}, {
+                get: {
+                    method: 'GET',
+                    params: {
+
+                    },
+                    isArray: false
+                }
+
+            });
+  }])
+
+.factory('Pistes', ['$resource',
+  function ($resource) {
+        return $resource('http://'+server+'/servers/:serverId/albums/:albumId/pistes', {}, {
+            get: {
                 method: 'GET',
-                params: {
-                    serverId: 'phones'
-                },
-                isArray: true
+                params: {},
+                isArray: false
             }
+
         });
   }])
+
 .factory('Servers', ['$resource',
   function ($resource) {
-        return $resource('http://localhost:4242/servers', {}, {
+        return $resource('http://'+server+'/servers', {}, {
             query: {
                 method: 'GET',
-                
+
                 isArray: true
             }
         });
@@ -31,10 +58,10 @@ angular.module('starter.services', ['ngResource']) //'ngResource'
 
 .factory('Renderers', ['$resource',
   function ($resource) {
-        return $resource('http://localhost:4242/renderers', {}, {
+        return $resource('http://'+server+'/renderers', {}, {
             query: {
                 method: 'GET',
-                                isArray: true
+                isArray: true
             }
         });
   }])

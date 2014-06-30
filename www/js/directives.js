@@ -25,9 +25,24 @@ angular.module('starter.directives', [])
                     var cssClass = attrs.loadedclass;
 
                     element.bind('load', function (e) {
-                        angular.element(element).addClass(cssClass);
+                        var colorThief = new ColorThief();
+                        console.log(element);
+                        console.log(angular.element(element));
+                        console.log(angular.element(element));
+                        var color = colorThief.getColor(angular.element(element)[0]);
+
+                        scope.$emit('$imageLoaded', color);
                     });
+
+                    //         angular.element(element).addClass(cssClass);
+
                 }
             }
+}
+])
+.directive("dynamicStyle",function(){
+    return {
+      templateUrl: 'css/piste_line_style_template.css'
     }
-]);
+  })
+;

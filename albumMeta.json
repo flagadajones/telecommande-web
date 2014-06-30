@@ -1,0 +1,31 @@
+{
+  "Result": {
+    "container": [
+      {
+        "searchable": "1",
+        "childCount": "13",
+        "restricted": "1",
+        "parentID": "0$1$12",
+        "id": "0$1$12$5952",
+        "title": "1, 2, 3 Soleils",
+        "genre": "Mizrahi",
+        "album": "1, 2, 3 Soleils",
+        "creator": "Taha, Khaled, Fudel",
+        "albumArtURI": [
+          {
+            "dlna:profileID": "JPEG_TN",
+            "Text": "http://192.168.0.32:9000/disk/DLNA-PNJPEG_TN-OP01-CI1-FLAGS00f00000/defaultalbumart/a_u_d_i_o.jpg/O0$1$8I435978.jpg?scale=160x160"
+          }
+        ],
+        "artist": "Taha, Khaled, Fudel",
+        "childCountContainer": "0",
+        "modificationTime": "984363987",
+        "lastUpdated": "984363987",
+        "class": "object.container.album.musicAlbum"
+      }
+    ]
+  },
+  "NumberReturned": "1",
+  "TotalMatches": "1",
+  "UpdateID": "1"
+}

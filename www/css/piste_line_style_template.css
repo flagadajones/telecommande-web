@@ -1,0 +1,13 @@
+ion-item.card-pistes.piste-line.item:active {
+background-color: {{deeperColor}};
+color: {{textColor}};
+box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.9);
+border-width: 1px;
+border-color:{{deeperColor}};
+border-style: none;
+}
+
+ion-item.card-pistes.piste-line.item{
+border-color:{{deeperColor}};	
+	
+}
