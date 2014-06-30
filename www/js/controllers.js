@@ -24,13 +24,26 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('PlaylistCtrl', function ($scope, $stateParams) {})
 //    .controller('AlbumsCtrl', function ($scope, $stateParams) {})
-.controller('AlbumsCtrl', ['$scope', '$stateParams','$location', '$ionicScrollDelegate', 'Albums', 'Pistes',
+.controller('AlbumsCtrl', ['$scope', '$stateParams', '$location', '$ionicScrollDelegate', 'Albums', 'Pistes',
 
-        function ($scope, $stateParams, $location,$ionicScrollDelegate, Albums, Pistes) {
+        function ($scope, $stateParams, $location, $ionicScrollDelegate, Albums, Pistes) {
         $scope.$root.isScrollable = true;
         $scope.page = 0;
-        $scope.$root.cls="bar-albums";
-        
+        $scope.albums = [];
+        $scope.albumsData = [];
+        $scope.$root.cls = "bar-albums";
+        $scope.loadMore = function () {
+            var data = [];
+            var l = $scope.albums.length
+            if ($scope.albumsData.length != 0) {
+                for (var i = l; i < l + 20; i++) {
+                    data.push($scope.albumsData[i]);
+                }
+            }
+            console.log("data");
+            $scope.albums = $scope.albums.concat(data);
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+        };
         $scope.selectedAlbum = {
             "searchable": "1",
             "childCount": "13",
@@ -68,7 +81,7 @@ angular.module('starter.controllers', ['starter.services'])
         $scope.rgbToHex =
             function (color) {
                 var result = "#" + $scope.componentToHex(color[0]) + $scope.componentToHex(color[1]) + $scope.componentToHex(color[2]);
-            
+
                 return result;
         };
         /*
@@ -101,35 +114,33 @@ angular.module('starter.controllers', ['starter.services'])
             return rgb;
         };
         $scope.transition = function (e) {
-        	
+
 
             if ($scope.page === 0) {
                 $scope.selectedAlbum = e;
                 var colorThief = new ColorThief();
-                colorThief.getColor($scope.selectedAlbum.albumArtURI[0].Text, 2, function (colorRGB) {
+                colorThief.getColor($scope.selectedAlbum.albumArtURI[0].Text, 10, function (colorRGB) {
                     $scope.color = $scope.rgbToHex(colorRGB);
-                    var isLight=isLightColor(colorRGB);
-                    if(isLight){
-                    	$scope.deeperColor = $scope.colorLuminance($scope.color, -0.2);
-                    	var tmpColor=$scope.deeperColor ;
-                        $scope.deeperColor=$scope.color;
-                        $scope.color=tmpColor;
+                    var isLight = isLightColor(colorRGB);
+                    if (isLight) {
+                        $scope.deeperColor = $scope.colorLuminance($scope.color, -0.2);
+                        var tmpColor = $scope.deeperColor;
+                        $scope.deeperColor = $scope.color;
+                        $scope.color = tmpColor;
+                    } else {
+                        $scope.deeperColor = $scope.colorLuminance($scope.color, 0.2);
                     }
-                   
-                    else{
-                    	$scope.deeperColor = $scope.colorLuminance($scope.color, 0.2);
-                    }
-                  
-                    
-//                   var resultColor = complementaryColor({r:colorRGB[0],g:colorRGB[1],b:colorRGB[2]});
-//                    tmpColor=[];
-//                    tmpColor[0]=resultColor.r;
-//                    tmpColor[1]=resultColor.g;
-//                    tmpColor[2]=resultColor.b;
-//                    $scope.textColor=$scope.rgbToHex(tmpColor);//4E
+
+
+                    //                   var resultColor = complementaryColor({r:colorRGB[0],g:colorRGB[1],b:colorRGB[2]});
+                    //                    tmpColor=[];
+                    //                    tmpColor[0]=resultColor.r;
+                    //                    tmpColor[1]=resultColor.g;
+                    //                    tmpColor[2]=resultColor.b;
+                    //                    $scope.textColor=$scope.rgbToHex(tmpColor);//4E
                     $scope.textColor = "#" + (0xffffff ^ parseInt($scope.color.replace("#", ""), 16)).toString(16);
-                    $scope.$root.cls="bar-detailAlbum";
-                    $scope.scroll=$ionicScrollDelegate.getScrollPosition();
+                    $scope.$root.cls = "bar-detailAlbum";
+                    $scope.scroll = $ionicScrollDelegate.getScrollPosition();
                     console.log($scope.scroll);
                     $ionicScrollDelegate.scrollTop();
                     $scope.page = 1;
@@ -146,13 +157,13 @@ angular.module('starter.controllers', ['starter.services'])
             } else {
                 $scope.page = 0;
                 $scope.$root.isScrollable = true;
-                $scope.$root.cls="bar-albums";
-                
-                if($scope.scroll){
-                	console.log($scope.scroll);
-                	$ionicScrollDelegate.scrollTo($scope.scroll.left,$scope.scroll.top);
-               }
-            
+                $scope.$root.cls = "bar-albums";
+
+                if ($scope.scroll) {
+                    console.log($scope.scroll);
+                    $ionicScrollDelegate.scrollTo($scope.scroll.left, $scope.scroll.top);
+                }
+
             }
         };
 
@@ -160,8 +171,10 @@ angular.module('starter.controllers', ['starter.services'])
         Albums.get({
             serverId: $stateParams.serverId
         }, function (albums) {
-            $scope.albums = albums.Result.container;
+            $scope.albumsData = albums.Result.container;
         });
+
+       // $scope.transition($scope.selectedAlbum);
 }])
 
 .controller('AlbumCtrl', ['$scope', '$stateParams', 'Album', 'Pistes',
@@ -181,5 +194,3 @@ angular.module('starter.controllers', ['starter.services'])
         });
 
                                            }]);
-
-

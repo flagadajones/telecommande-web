@@ -1,0 +1,52 @@
+<ion-view title="Album" >
+    <ion-nav-bar class="nav-title-slide-ios7 bar-detailAlbum">
+        <ion-nav-buttons side="left">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        </ion-nav-buttons>
+
+    </ion-nav-bar>
+
+    <img  ng-src="{{selectedAlbum.albumArtURI[0].Text}}" class="blur">
+    <ion-content scroll="false">
+        <section id="details" class="details" >
+            <div class="mycard " layout horizontal>
+                <div class="card-left " ng-click="transition() " style="background-image: url({{selectedAlbum.albumArtURI[0].Text}});background-size: 100%;float:left; ">
+
+                </div>
+
+                <div class="card-right " style="float:left;" ng-style="{'border-bottom':'1px double {{color}}'}">
+                    <div class="card-title" ng-style="{'background-color':'{{color}}'}">
+                        <div class="card-info" ng-style="{'color':'{{textColor}}'}">
+                            <div class="card-album-title ">{{selectedAlbum.album}}</div>
+                            <div class="card-album-artist ">{{selectedAlbum.artist}}</div>
+                        </div>
+                    </div>
+                    <div class="card-buttons" style="float:left;" ng-style="{'background-color':'{{deeperColor}}'}">
+                        <a ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-rewind"></a>
+                        <a ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-pause"></a>
+                        <a ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-fastforward"></a>
+                    </div>
+                </div>
+                <!--ion-list>
+                        <ion-item class="card-pistes " ng-repeat="piste in pistes">
+
+                            <div style="height:48px;">
+                                <span style="float:left;height:100%">{{piste.originalTrackNumber}}</span><span style="float:right;height:100%">{{piste.res[0].duration}}</span><span style="margin:0 auto;height:100%;width:100%">{{piste.title}}</span> 
+
+                            </div>
+                        </ion-item>
+                    </ion-list-->
+                <ion-scroll style="height:250px;width:100%">
+                    <ion-item class="card-pistes " style="padding-top:0px;padding-bottom:0px;" ng-repeat="piste in pistes">
+                        <div style="height:48px;">
+                            <span style="float:left;height:100%">{{piste.originalTrackNumber}}</span><span style="float:right;height:100%">{{piste.res[0].duration}}</span><span style="margin:0 auto;height:100%;width:100%">{{piste.title}}</span> 
+                        </div>
+                    </ion-item>
+                </ion-scroll>
+            </div>
+
+        </section>
+
+    </ion-content>
+
+</ion-view>
