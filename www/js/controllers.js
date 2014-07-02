@@ -24,10 +24,12 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('PlaylistCtrl', function ($scope, $stateParams) {})
 //    .controller('AlbumsCtrl', function ($scope, $stateParams) {})
-.controller('AlbumsCtrl', ['$scope', '$stateParams', '$location', '$ionicScrollDelegate', 'Albums', 'Pistes',
+.controller('AlbumsCtrl', ['$scope', '$rootScope','$stateParams', '$location', '$ionicScrollDelegate', 'Albums', 'Pistes',
 
-        function ($scope, $stateParams, $location, $ionicScrollDelegate, Albums, Pistes) {
-        $scope.$root.isScrollable = true;
+        function ($scope,$rootScope, $stateParams, $location, $ionicScrollDelegate, Albums, Pistes) {
+        $rootScope.config={server:'55076f6e-6b79-4d65-6471-b8a386975678',renderer:'2baf6bff-fd48-4bbc-9c02-680183b513c1'};
+            
+            $scope.$root.isScrollable = true;
         $scope.page = 0;
         $scope.albums = [];
         $scope.albumsData = [];
