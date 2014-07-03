@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives', 'btford.socket-io','ui.scroll','ui.scroll.jqlite'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.directives', 'btford.socket-io','ui.scroll','ui.scroll.jqlite','ngTouch'])
 //, 'starter.directives', 'akoenig.deckgrid'
 .run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
