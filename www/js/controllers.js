@@ -1,36 +1,37 @@
 angular.module('starter.controllers', ['starter.services'])
 
-.controller('AppCtrl', function ($scope) {})
+.controller('AppCtrl', function($scope) {})
 
 .controller('PlaylistsCtrl', ['$scope', "mySocket", 'Servers', 'Renderers',
-    function ($scope, mySocket, Servers, Renderers) {
-        Servers.query({}, function (servers) {
+    function($scope, mySocket, Servers, Renderers) {
+        Servers.query({}, function(servers) {
             $scope.servers = servers;
         });
-        Renderers.query({}, function (renderers) {
+        Renderers.query({}, function(renderers) {
             $scope.renderers = renderers;
         });
 
-        mySocket.on('device:server', function (data) {
+        mySocket.on('device:server', function(data) {
             console.log(data);
             $scope.servers.push(data);
         });
-        mySocket.on('device:renderer', function (data) {
+        mySocket.on('device:renderer', function(data) {
             console.log(data);
             $scope.renderers.push(data);
         });
 
-}])
+    }
+])
 
-.controller('PlaylistCtrl', function ($scope, $stateParams) {})
+.controller('PlaylistCtrl', function($scope, $stateParams) {})
 //    .controller('AlbumsCtrl', function ($scope, $stateParams) {})
-.controller('AlbumsCtrl', ['$scope', '$stateParams','$location', '$ionicScrollDelegate', 'Albums', 'Pistes',
+.controller('AlbumsCtrl', ['$scope', '$stateParams', '$location', '$ionicScrollDelegate', 'Albums', 'Pistes',
 
-        function ($scope, $stateParams, $location,$ionicScrollDelegate, Albums, Pistes) {
+    function($scope, $stateParams, $location, $ionicScrollDelegate, Albums, Pistes) {
         $scope.$root.isScrollable = true;
         $scope.page = 0;
-        $scope.$root.cls="bar-albums";
-        
+        $scope.$root.cls = "bar-albums";
+
         $scope.selectedAlbum = {
             "searchable": "1",
             "childCount": "13",
@@ -51,7 +52,7 @@ angular.module('starter.controllers', ['starter.services'])
             "lastUpdated": "984363987",
             "class": "object.container.album.musicAlbum"
         };
-        $scope.$on('$imageLoaded', function (color) {
+        $scope.$on('$imageLoaded', function(color) {
             console.log(e);
             console.log(color);
 
@@ -60,15 +61,15 @@ angular.module('starter.controllers', ['starter.services'])
 
 
         $scope.componentToHex =
-            function (c) {
+            function(c) {
                 var hex = c.toString(16);
                 return hex.length == 1 ? "0" + hex : hex;
         };
 
         $scope.rgbToHex =
-            function (color) {
+            function(color) {
                 var result = "#" + $scope.componentToHex(color[0]) + $scope.componentToHex(color[1]) + $scope.componentToHex(color[2]);
-            
+
                 return result;
         };
         /*
@@ -80,7 +81,7 @@ angular.module('starter.controllers', ['starter.services'])
         };
 */
 
-        $scope.colorLuminance = function (hex, lum) {
+        $scope.colorLuminance = function(hex, lum) {
 
             // validate hex string
             hex = String(hex).replace(/[^0-9a-f]/gi, '');
@@ -100,36 +101,34 @@ angular.module('starter.controllers', ['starter.services'])
 
             return rgb;
         };
-        $scope.transition = function (e) {
-        	
+        $scope.transition = function(e) {
+
 
             if ($scope.page === 0) {
                 $scope.selectedAlbum = e;
                 var colorThief = new ColorThief();
-                colorThief.getColor($scope.selectedAlbum.albumArtURI[0].Text, 2, function (colorRGB) {
+                colorThief.getColor($scope.selectedAlbum.albumArtURI[0].Text, 2, function(colorRGB) {
                     $scope.color = $scope.rgbToHex(colorRGB);
-                    var isLight=isLightColor(colorRGB);
-                    if(isLight){
-                    	$scope.deeperColor = $scope.colorLuminance($scope.color, -0.2);
-                    	var tmpColor=$scope.deeperColor ;
-                        $scope.deeperColor=$scope.color;
-                        $scope.color=tmpColor;
+                    var isLight = isLightColor(colorRGB);
+                    if (isLight) {
+                        $scope.deeperColor = $scope.colorLuminance($scope.color, -0.2);
+                        var tmpColor = $scope.deeperColor;
+                        $scope.deeperColor = $scope.color;
+                        $scope.color = tmpColor;
+                    } else {
+                        $scope.deeperColor = $scope.colorLuminance($scope.color, 0.2);
                     }
-                   
-                    else{
-                    	$scope.deeperColor = $scope.colorLuminance($scope.color, 0.2);
-                    }
-                  
-                    
-//                   var resultColor = complementaryColor({r:colorRGB[0],g:colorRGB[1],b:colorRGB[2]});
-//                    tmpColor=[];
-//                    tmpColor[0]=resultColor.r;
-//                    tmpColor[1]=resultColor.g;
-//                    tmpColor[2]=resultColor.b;
-//                    $scope.textColor=$scope.rgbToHex(tmpColor);//4E
+
+
+                    //                   var resultColor = complementaryColor({r:colorRGB[0],g:colorRGB[1],b:colorRGB[2]});
+                    //                    tmpColor=[];
+                    //                    tmpColor[0]=resultColor.r;
+                    //                    tmpColor[1]=resultColor.g;
+                    //                    tmpColor[2]=resultColor.b;
+                    //                    $scope.textColor=$scope.rgbToHex(tmpColor);//4E
                     $scope.textColor = "#" + (0xffffff ^ parseInt($scope.color.replace("#", ""), 16)).toString(16);
-                    $scope.$root.cls="bar-detailAlbum";
-                    $scope.scroll=$ionicScrollDelegate.getScrollPosition();
+                    $scope.$root.cls = "bar-detailAlbum";
+                    $scope.scroll = $ionicScrollDelegate.getScrollPosition();
                     console.log($scope.scroll);
                     $ionicScrollDelegate.scrollTop();
                     $scope.page = 1;
@@ -137,7 +136,7 @@ angular.module('starter.controllers', ['starter.services'])
                     Pistes.get({
                         serverId: $stateParams.serverId,
                         albumId: $scope.selectedAlbum.id
-                    }, function (pistes) {
+                    }, function(pistes) {
                         $scope.pistes = pistes.Result.item;
                     });
                 });
@@ -146,40 +145,61 @@ angular.module('starter.controllers', ['starter.services'])
             } else {
                 $scope.page = 0;
                 $scope.$root.isScrollable = true;
-                $scope.$root.cls="bar-albums";
-                
-                if($scope.scroll){
-                	console.log($scope.scroll);
-                	$ionicScrollDelegate.scrollTo($scope.scroll.left,$scope.scroll.top);
-               }
-            
+                $scope.$root.cls = "bar-albums";
+
+                if ($scope.scroll) {
+                    console.log($scope.scroll);
+                    $ionicScrollDelegate.scrollTo($scope.scroll.left, $scope.scroll.top);
+                }
+
             }
         };
 
-
-        Albums.get({
+            $scope.albums={};
+            $scope.albums.get = function(index, count, success){
+               console.log(index,count);
+                if(!$scope.albums.datas){
+                    console.log("koi");
+                    Albums.get({
+                            serverId: $stateParams.serverId
+                    }, function(albums) {
+                        //$scope.albums = albums.Result.container;
+                        $scope.albums.datas=albums.Result.container;
+                        $scope.albums.revision={};
+                        console.log($scope.albums.datas.length);
+                        success($scope.albums.datas.slice(index,index+count));
+                    }); 
+                }else{
+                    console.log("too");
+					success($scope.albums.datas.slice(index,index+count));
+                }
+            };
+        $scope.albums.revision={};
+        /*Albums.get({
             serverId: $stateParams.serverId
-        }, function (albums) {
-            $scope.albums = albums.Result.container;
-        });
-}])
+        }, function(albums) {
+            //$scope.albums = albums.Result.container;
+            $scope.albums.datas=albums.Result.container;
+            $scope.albums.revision={};
+        });*/
+    }
+])
 
 .controller('AlbumCtrl', ['$scope', '$stateParams', 'Album', 'Pistes',
-        function ($scope, $stateParams, Album, Pistes) {
+    function($scope, $stateParams, Album, Pistes) {
 
         Album.get({
             serverId: $stateParams.serverId,
             albumId: $stateParams.albumId
-        }, function (album) {
+        }, function(album) {
             $scope.album = album.Result.container[0];
         });
         Pistes.get({
             serverId: $stateParams.serverId,
             albumId: $stateParams.albumId
-        }, function (album) {
+        }, function(album) {
             $scope.pistes = album.Result.item;
         });
 
-                                           }]);
-
-
+    }
+]);

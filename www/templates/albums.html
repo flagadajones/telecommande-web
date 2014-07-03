@@ -7,17 +7,16 @@
     </ion-nav-bar>
      
     <img ng-if="page===1" ng-src="{{selectedAlbum.albumArtURI[0].Text}}" class="blur">
-    <ion-content ng-scroll="{{$root.isScrollable}}">
+    <ion-content scroll="false">
+    <!--ion-content ng-scroll="{{$root.isScrollable}}"-->
         <div ng-if="page===0" class="green "></div>
 
 
-        <section ng-if="page===0">
+        <section ng-if="page===0" >
 
-            <div class="chip-container">
+            <div class="chip-container " style="height:300px" ui-scroll-viewport>
 
-
-
-                <div ng-repeat="item in albums" class="chip" ng-click="transition(item)">
+                <div ui-scroll="item in albums" buffer-size= "20" class="chip" ng-click="transition(item)">
                     <div class="chip-top " ng-style="{'background-image': 'url({{item.albumArtURI[0].Text}})','background-size': '100%' }">
                     </div>
                     <div class="chip-bottom ">
