@@ -7,16 +7,19 @@
     </ion-nav-bar>
 
     <img ng-if="page===1" ng-src="{{selectedAlbum.albumArtURI[0].Text}}" class="blur">
-    <ion-content scroll="false">
-    <!--ion-content ng-scroll="{{$root.isScrollable}}"-->
+    <ion-content scroll="true">
+        <!--ion-content ng-scroll="{{$root.isScrollable}}"-->
         <div ng-if="page===0" class="green "></div>
 
 
-        <section ng-if="page===0" >
+        <section ng-if="page===0">
 
-            <div class="chip-container " style="height:300px" ui-scroll-viewport>
+            <div class="chip-container " style="height:590px" ui-scroll-viewport>
+                <!---->
 
-                <div ui-scroll="item in albums" buffer-size= "20" class="chip" ng-click="transition(item)">
+                <div ui-scroll="item in albums" buffer-size="10" padding="5" class="chip" ng-click="transition(item)">
+
+                    <!--div ng-repeat="item in albums" class="chip" ng-click="transition(item)"-->
                     <div class="chip-top " ng-style="{'background-image': 'url({{item.albumArtURI[0].Text}})','background-size': '100%' }">
                     </div>
                     <div class="chip-bottom ">
@@ -24,7 +27,6 @@
                         <div class="chip-artist ">{{item.artist}}</div>
                     </div>
                 </div>
-                <ion-infinite-scroll on-infinite="loadMore()" distance="1%" icon="ion-loading-c"></ion-infinite-scroll>
 
             </div>
         </section>
@@ -40,7 +42,7 @@
                     <div class="card-title" ng-style="{'background-color':'{{color}}'}">
                         <div class="playButton">
                             <div class="fab" ng-style="{'background-color':'{{textColor}}','color':'{{color}}'} ">
-                                <a class="ion-ios7-play contentIcon"></a>
+                                <a class="ion-ios7-play contentIcon" ng-click="transportUri()"></a>
                             </div>
                         </div>
                         <div class="card-info" ng-style="{'color':'{{textColor}}'}">
@@ -49,9 +51,9 @@
                         </div>
                     </div>
                     <div class="card-buttons" ng-style="{'background-color':'{{deeperColor}}'}">
-                        <a ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-rewind"></a>
-                        <a ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-pause"></a>
-                        <a ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-fastforward"></a>
+                        <a ng-click="prev()" ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-rewind"></a>
+                        <a ng-click="pause()" ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-pause"></a>
+                        <a ng-click="next()" ng-style="{'color':'{{textColor}}'}" class="card-player-button button button-icon icon ion-ios7-fastforward"></a>
                     </div>
                 </div>
                 <!--ion-list>

@@ -1,36 +1,47 @@
 angular.module('starter.controllers', ['starter.services'])
 
-.controller('AppCtrl', function($scope) {})
+.controller('AppCtrl', function ($scope) {
+
+    $scope.config = {
+        server: '55076f6e-6b79-4d65-6471-b8a386975678',
+        renderer: '693f0e26-bd86-47b3-8183-9836e0313d2e'
+    };
+})
 
 .controller('PlaylistsCtrl', ['$scope', "mySocket", 'Servers', 'Renderers',
-    function($scope, mySocket, Servers, Renderers) {
-        Servers.query({}, function(servers) {
-            $scope.servers = servers;
-        });
-        Renderers.query({}, function(renderers) {
-            $scope.renderers = renderers;
-        });
-
-        mySocket.on('device:server', function(data) {
+    function ($scope, mySocket, Servers, Renderers) {
+        mySocket.on('device:server', function (data) {
             console.log(data);
             $scope.servers.push(data);
         });
-        mySocket.on('device:renderer', function(data) {
+        mySocket.on('device:renderer', function (data) {
             console.log(data);
             $scope.renderers.push(data);
         });
 
+        Servers.query({}, function (servers) {
+            $scope.servers = servers;
+        });
+        Renderers.query({}, function (renderers) {
+            $scope.renderers = renderers;
+        });
+
+
+        $scope.selectRenderer = function (renderer) {
+            $scope.config.renderer = renderer.id;
+        }
+
     }
 ])
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {})
+.controller('PlaylistCtrl', function ($scope, $stateParams) {})
 //    .controller('AlbumsCtrl', function ($scope, $stateParams) {})
-.controller('AlbumsCtrl', ['$scope', '$rootScope','$stateParams', '$location', '$ionicScrollDelegate', 'Albums', 'Pistes',
+.controller('AlbumsCtrl', ['$scope', '$rootScope', '$stateParams', '$location', '$ionicScrollDelegate', 'Albums', 'Pistes', 'Renderers',
 
-        function ($scope,$rootScope, $stateParams, $location, $ionicScrollDelegate, Albums, Pistes) {
-        $rootScope.config={server:'55076f6e-6b79-4d65-6471-b8a386975678',renderer:'2baf6bff-fd48-4bbc-9c02-680183b513c1'};
-            
-            $scope.$root.isScrollable = true;
+        function ($scope, $rootScope, $stateParams, $location, $ionicScrollDelegate, Albums, Pistes, Renderers) {
+
+
+        $scope.$root.isScrollable = true;
         $scope.page = 0;
         $scope.albums = [];
         $scope.albumsData = [];
@@ -67,22 +78,72 @@ angular.module('starter.controllers', ['starter.services'])
             "lastUpdated": "984363987",
             "class": "object.container.album.musicAlbum"
         };
-        $scope.$on('$imageLoaded', function(color) {
+        $scope.$on('$imageLoaded', function (color) {
             console.log(e);
             console.log(color);
 
         });
+
+        $scope.transportUri = function () {
+            Renderers.transportUri({
+                    id: $scope.config.renderer
+                }, {
+                    serverId: $scope.config.server,
+                    albumId: $scope.selectedAlbum.id
+                },
+
+                function (err) {
+                    console.log(err);
+                });
+        };
+        $scope.next = function () {
+            Renderers.next({
+                    id: $scope.config.renderer
+                },
+
+                function (err) {
+                    console.log(err);
+                });
+        };
+        $scope.prev = function () {
+            Renderers.prev({
+                    id: $scope.config.renderer
+                },
+
+                function (err) {
+                    console.log(err);
+                });
+        };
+        $scope.play = function () {
+            Renderers.play({
+                    id: $scope.config.renderer
+                },
+
+                function (err) {
+                    console.log(err);
+                });
+        };
+        $scope.pause = function () {
+            Renderers.pause({
+                    id: $scope.config.renderer
+                },
+
+                function (err) {
+                    console.log(err);
+                });
+        };
+
         $scope.color = "#000010";
 
 
         $scope.componentToHex =
-            function(c) {
+            function (c) {
                 var hex = c.toString(16);
                 return hex.length == 1 ? "0" + hex : hex;
         };
 
         $scope.rgbToHex =
-            function(color) {
+            function (color) {
                 var result = "#" + $scope.componentToHex(color[0]) + $scope.componentToHex(color[1]) + $scope.componentToHex(color[2]);
 
                 return result;
@@ -96,7 +157,7 @@ angular.module('starter.controllers', ['starter.services'])
         };
 */
 
-        $scope.colorLuminance = function(hex, lum) {
+        $scope.colorLuminance = function (hex, lum) {
 
             // validate hex string
             hex = String(hex).replace(/[^0-9a-f]/gi, '');
@@ -117,7 +178,7 @@ angular.module('starter.controllers', ['starter.services'])
             return rgb;
         };
 
-        $scope.transition = function(e) {
+        $scope.transition = function (e) {
 
             if ($scope.page === 0) {
                 $scope.selectedAlbum = e;
@@ -152,7 +213,7 @@ angular.module('starter.controllers', ['starter.services'])
                     Pistes.get({
                         serverId: $stateParams.serverId,
                         albumId: $scope.selectedAlbum.id
-                    }, function(pistes) {
+                    }, function (pistes) {
                         $scope.pistes = pistes.Result.item;
                     });
                 });
@@ -171,42 +232,50 @@ angular.module('starter.controllers', ['starter.services'])
             }
         };
 
-            $scope.albums={};
-            $scope.albums.get = function(index, count, success){
-               console.log(index,count);
-                if(!$scope.albums.datas){
-                    console.log("koi");
-                    Albums.get({
-                            serverId: $stateParams.serverId
-                    }, function(albums) {
-                        //$scope.albums = albums.Result.container;
-                        $scope.albums.datas=albums.Result.container;
-                        $scope.albums.revision={};
-                        console.log($scope.albums.datas.length);
-                        success($scope.albums.datas.slice(index,index+count));
-                    }); 
-                }else{
-                    console.log("too");
-					success($scope.albums.datas.slice(index,index+count));
-                }
-            };
-        $scope.albums.revision={};
+
+        $scope.albums = {};
+        $scope.albums.get = function (index, count, success) {
+            console.log(index, count);
+            if (!$scope.albums.datas) {
+                console.log("koi");
+
+                console.log($stateParams.serverId);
+                Albums.get({
+                    serverId: $stateParams.serverId
+                }, function (albums) {
+                    $scope.albums = albums.Result.container;
+                    $scope.albums.datas = albums.Result.container;
+                    $scope.albums.revision = {};
+                    console.log($scope.albums.datas.length);
+                    success($scope.albums.datas.slice(index, index + count));
+
+                });
+
+            } else {
+                console.log("too");
+                success($scope.albums.datas.slice(index, index + count));
+            }
+
+        };
+        $scope.albums.revision = {};
+
+
 
 }])
 
 .controller('AlbumCtrl', ['$scope', '$stateParams', 'Album', 'Pistes',
-    function($scope, $stateParams, Album, Pistes) {
+    function ($scope, $stateParams, Album, Pistes) {
 
         Album.get({
             serverId: $stateParams.serverId,
             albumId: $stateParams.albumId
-        }, function(album) {
+        }, function (album) {
             $scope.album = album.Result.container[0];
         });
         Pistes.get({
             serverId: $stateParams.serverId,
             albumId: $stateParams.albumId
-        }, function(album) {
+        }, function (album) {
             $scope.pistes = album.Result.item;
         });
 

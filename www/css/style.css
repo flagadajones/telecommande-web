@@ -32,10 +32,17 @@ body {
     background-color: transparent;
     color: #fff;
 }
-//
-Album card .chip-container {
+/*Server and Renderer List*/
+
+.selected-ren {
+    background: #f0f;
+}
+/*Album card*/
+
+// ghg
+.chip-container {
     position: absolute;
-    top: 275px;
+    top: 250px;
     right: 0;
     left: 0;
     text-align: center;
